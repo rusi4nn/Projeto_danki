@@ -42,6 +42,50 @@ img  {
 
 /* Estilização */
 
+.sucesso {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    z-index: 999;
+    padding: 15px 2%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #86e67a;
+}
+
+.erro {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    z-index: 999;
+    padding: 15px 2%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #c94e42;
+}
+
+.overlay-loading {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.overlay-loading img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
 header {
     background-color: #3D437A;
     padding: 20px 0;

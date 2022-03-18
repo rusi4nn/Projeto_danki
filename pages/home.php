@@ -4,32 +4,10 @@
         <div style="background: url('<?= INCLUDE_PATH ?>images/bg-form3.jpg');" class="banner-single"></div>
         <div class="overlay"></div>
         <div class="center">
-            <?php
-                if(isset($_POST['acao'])) {
-                    // Enviei o formulário.
-                    if ($_POST['email'] != '') {
-                        $email = $_POST['email'];
-                        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                            // Tudo certo é um e-mail
-                            $mail = new Email('smtp.gmail.com','projetos.web.git@gmail.com','Estudos','816274@1');
-                            $mail->addAdress('gercinon073@gmail.com','Gercino Neto');
-                            $mail->formatarEmail(array('assunto'=>'Um novo e-mail foi cadastrado','corpo'=>'O email: '.'<b>'.$email.'</b>'.' foi cadastrado com sucesso!'));
-                            if($mail->enviarEmail()) {
-                                echo '<script>alert("E-mail enviado com sucesso!")</script>';
-                            } else {
-                                echo '<script>alert("Não foi possível enviar o e-mail.")</script>';
-                            }
-                        } else {
-                            echo '<script>alert("Não é um e-mail válido")</script>';
-                        }
-                    } else {
-                        echo '<script>alert("Campos vázios não são permitidos!")</script>';
-                    }
-                }
-            ?>
             <form method="POST" action="">
                 <h2>Qual o seu melhor e-mail?</h2>
                 <input type="email" name="email" required>
+                <input type="hidden" name="identificador" value="form_home">
                 <input type="submit" name="acao" value="Cadastrar!">
             </form>
         </div>

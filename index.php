@@ -38,6 +38,12 @@
 
     ?>
 
+    <div class="sucesso">Formulário enviado com sucesso!</div>
+    <div class="erro">Não foi possível enviar o e-mail</div>
+    <div class="overlay-loading">
+        <img src="<?= INCLUDE_PATH ?>images/ajax-load.gif" alt="">
+    </div>
+
     <!-- Menu -->
     <header>
         <div class="center">
@@ -102,7 +108,7 @@
     <!-- Slider Js -->
     <?php if ($url == 'home' || $url == '') { ?>
         <script src="<?= INCLUDE_PATH ?>js/slider.js"></script>
-        <script src="<?= INCLUDE_PATH ?>js/exemplo.js"></script>
     <?php } ?>
+    <script src="<?php INCLUDE_PATH ?>js/formularios.js"></script>
 </body>
 </html>
