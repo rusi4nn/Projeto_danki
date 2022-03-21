@@ -136,6 +136,7 @@ nav.desktop a {
     left: 0;
     top: 0;
     width: 100%;
+    display: none;
     height: 100%;
     z-index: 1;
     background-size: cover;

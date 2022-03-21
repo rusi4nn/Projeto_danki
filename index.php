@@ -1,4 +1,5 @@
 <?php require_once('config.php'); ?>
+<?php Site::updateUsuarioOnline(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
