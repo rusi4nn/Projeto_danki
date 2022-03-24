@@ -29,14 +29,14 @@
     <div class="menu">
         <div class="menu-wrapper">
             <div class="box-usuario">
-                <?php if($_SESSION['img'] == '') { ?>
+                <?php if($_SESSION['imagem'] == '') { ?>
                 <div class="avatar-usuario">
                     <i class="fas fa-user"></i>   
                 </div>
                 <?php } else { ?>
 
                     <div class="imagem-usuario">
-                        <img src="<?= INCLUDE_PATH_PAINEL ?>uploads/<?= $_SESSION['img']?>" alt="">   
+                        <img src="<?= INCLUDE_PATH_PAINEL ?>uploads/<?= $_SESSION['imagem']?>" alt="">   
                     </div>
 
                 <?php } ?>                
@@ -47,18 +47,18 @@
             </div>
             <div class="items-menu">
                 <h2>Cadastro</h2>
-                <a href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
-                <a href="">Cadastrar Serviço</a>
-                <a href="">Cadastrar Slides</a>
+                <a <?= selecionadoMenu('cadastrar-depoimento') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
+                <a <?= selecionadoMenu('cadastrar-servico') ?> href="">Cadastrar Serviço</a>
+                <a <?= selecionadoMenu('cadastrar-slides') ?> href="">Cadastrar Slides</a>
                 <h2>Gestão</h2>
-                <a href="">Listar Depoimentos</a>
-                <a href="">Listar Serviços</a>
-                <a href="">Listar Slides</a>
+                <a <?= selecionadoMenu('listar-depoimentos') ?> href="">Listar Depoimentos</a>
+                <a <?= selecionadoMenu('listar-servicos') ?> href="">Listar Serviços</a>
+                <a <?= selecionadoMenu('listar-slides') ?> href="">Listar Slides</a>
                 <h2>Administração do painel</h2>
-                <a href="">Editar Usuário</a>
-                <a href="">Adicionar Usuários</a>
+                <a <?= selecionadoMenu('editar-usuario') ?> href="<?= INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
+                <a <?= selecionadoMenu('adicionar-usuario') ?> <?= verificaPermissaoMenu(2) ?> href="<?= INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuários</a>
                 <h2>Configuração Geral</h2>
-                <a href="">Editar</a>
+                <a <?= selecionadoMenu('editar-site') ?> href="">Editar Site</a>
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logout">
-            <a href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i> <span>Página inicial</span></a>
+            <a <?php if(@$_GET['url'] == '' || $_GET['url'] == 'home') { ?> style="background: #60727a;padding: 15px;" <?php } ?> href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i> <span>Página inicial</span></a>
                 <a href="<?= INCLUDE_PATH_PAINEL ?>?logout"><i class="fas fa-user-alt-slash"></i> <span>Sair</span></a>
             </div>
             <div class="clear"></div>

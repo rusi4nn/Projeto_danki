@@ -15,6 +15,9 @@
 
     define('INCLUDE_PATH','http://192.168.1.5/dev_web_danki/');
     define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
+
+    define('BASE_DIR_PAINEL',__DIR__.'/painel');
+
     // Conectar com banco de dados
     define('HOST','localhost');
     define('DATABASE','projeto_danki');
@@ -24,15 +27,37 @@
     // Constantes Painel de Controle
     define('NOME_EMPRESA','Danki code');
 
-    // Funções
-    function pegaCargo($cargo) {
-        $arr = [
-            '0'=>'Normal',
-            '1'=>'Sub  Adminnistrador',
-            '2'=>'Administrador'
-        ];
+    // Variaveis Cargo Painel
 
-        return $arr[$cargo];
+    // Funções do Painel
+    function pegaCargo($indice) {
+        return Painel::$cargos[$indice];
+    }
+
+    function selecionadoMenu($par) {
+        $url = explode('/',@$_GET['url'])[0];
+
+        if ($url == $par) {
+            echo 'class="menu-active"';
+        }
+
+    }
+
+    function verificaPermissaoMenu($permissao) {
+        if ($_SESSION['cargo'] >= $permissao) {
+            return;
+        } else {
+            echo 'style="display:none;"';
+        }
+    }
+
+    function verificaPermissaoPagina($permissao) {
+        if ($_SESSION['cargo'] >= $permissao) {
+            return;
+        } else {
+            header('Location: '.INCLUDE_PATH_PAINEL.'permissao-negada');
+            die();
+        }
     }
 
 ?>
