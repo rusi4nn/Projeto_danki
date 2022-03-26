@@ -28,15 +28,30 @@ $(function() {
         }
     });
 
+    $('[formato=data]').mask('99/99/9999');
+
+    $('[actionBtn=delete]').click(function() {
+        var txt;
+        var r = confirm("Deseja excluir o registro?");
+        if(r == true) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+
     // $(window).resize(function() {
     //     windowSize = $(window)[0].innerWidth;
+    //     targetSizeMenu = (windowSize <= 400) ? 200 : 250;
     //     if(windowSize <= 768) {
     //         $('.menu').css('width','0').css('padding','0');
+    //         $('.content,header').css('width','100%').css('left','0');
     //         open = false;
     //     } else {
+    //         $('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'});
+    //         $('.content,header').css('width','calc(100% - 250px)');
+    //         $('.content,header').aimate({'left':targetSizeMenu+'px'});
     //         open = true;
-    //         $('.content,header').css('width','calc(100% - 250px)').css('left','250px');
-    //         $('.menu').css('width','250px').css('padding','10px 0');
     //     }
     // })
 

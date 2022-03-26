@@ -51,7 +51,7 @@
                 <a <?= selecionadoMenu('cadastrar-servico') ?> href="">Cadastrar Serviço</a>
                 <a <?= selecionadoMenu('cadastrar-slides') ?> href="">Cadastrar Slides</a>
                 <h2>Gestão</h2>
-                <a <?= selecionadoMenu('listar-depoimentos') ?> href="">Listar Depoimentos</a>
+                <a <?= selecionadoMenu('listar-depoimentos') ?> href="<?= INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
                 <a <?= selecionadoMenu('listar-servicos') ?> href="">Listar Serviços</a>
                 <a <?= selecionadoMenu('listar-slides') ?> href="">Listar Slides</a>
                 <h2>Administração do painel</h2>
@@ -87,6 +87,8 @@
     <script src="https://kit.fontawesome.com/da616c4c66.js" crossorigin="anonymous"></script>
     <!-- jquery -->
     <script src="<?= INCLUDE_PATH ?>js/jquery.min.js"></script>
+    <!-- jquery Mask -->
+    <script src="<?= INCLUDE_PATH_PAINEL ?>js/jquery.mask.js"></script>
     <!-- Main js -->
     <script src="<?= INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 </body>

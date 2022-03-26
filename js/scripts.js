@@ -33,6 +33,7 @@ $(function() {
             $('footer').css('position','fixed');
             $('footer').css('width','100%');
             $('.container-principal').fadeIn();
+            window.history.pushState('','',pagina);
             return false;
         });
     }
