@@ -48,17 +48,17 @@
             <div class="items-menu">
                 <h2>Cadastro</h2>
                 <a <?= selecionadoMenu('cadastrar-depoimento') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
-                <a <?= selecionadoMenu('cadastrar-servico') ?> href="">Cadastrar Serviço</a>
-                <a <?= selecionadoMenu('cadastrar-slides') ?> href="">Cadastrar Slides</a>
+                <a <?= selecionadoMenu('cadastrar-servico') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
+                <a <?= selecionadoMenu('cadastrar-slides') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-slides">Cadastrar Slides</a>
                 <h2>Gestão</h2>
                 <a <?= selecionadoMenu('listar-depoimentos') ?> href="<?= INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
-                <a <?= selecionadoMenu('listar-servicos') ?> href="">Listar Serviços</a>
-                <a <?= selecionadoMenu('listar-slides') ?> href="">Listar Slides</a>
+                <a <?= selecionadoMenu('listar-servicos') ?> href="<?= INCLUDE_PATH_PAINEL ?>listar-servicos">Listar Serviços</a>
+                <a <?= selecionadoMenu('listar-slides') ?> href="<?= INCLUDE_PATH_PAINEL ?>listar-slides">Listar Slides</a>
                 <h2>Administração do painel</h2>
                 <a <?= selecionadoMenu('editar-usuario') ?> href="<?= INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
                 <a <?= selecionadoMenu('adicionar-usuario') ?> <?= verificaPermissaoMenu(2) ?> href="<?= INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuários</a>
                 <h2>Configuração Geral</h2>
-                <a <?= selecionadoMenu('editar-site') ?> href="">Editar Site</a>
+                <a <?= selecionadoMenu('editar-site') ?> href="<?= INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="logout">
-            <a <?php if(@$_GET['url'] == '' || $_GET['url'] == 'home') { ?> style="background: #60727a;padding: 15px;" <?php } ?> href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i> <span>Página inicial</span></a>
+                <a <?php if(@$_GET['url'] == '' || $_GET['url'] == 'home') { ?> style="background: #60727a;padding: 15px;" <?php } ?> href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i> <span>Página inicial</span></a>
                 <a href="<?= INCLUDE_PATH_PAINEL ?>?logout"><i class="fas fa-user-alt-slash"></i> <span>Sair</span></a>
             </div>
             <div class="clear"></div>

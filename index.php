@@ -1,6 +1,13 @@
 <?php require_once('config.php'); ?>
 <?php Site::updateUsuarioOnline(); ?>
 <?php Site::contador() ?>
+<?php
+
+    $infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site_config`");
+    $infoSite->execute();
+    $infoSite = $infoSite->fetch();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Main Css -->
     <link rel="stylesheet" href="<?= INCLUDE_PATH ?>css/style.css">
-    <title>Projeto 01</title>
+    <title><?= $infoSite['titulo'] ?></title>
 </head>
 <body>
 

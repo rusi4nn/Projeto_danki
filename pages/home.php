@@ -1,4 +1,4 @@
-    <section class="banner-container">
+        <section class="banner-container">
         <div style="background: url('<?= INCLUDE_PATH ?>images/bg-form.jpg');" class="banner-single"></div>
         <div style="background: url('<?= INCLUDE_PATH ?>images/bg-form2.jpg');" class="banner-single"></div>
         <div style="background: url('<?= INCLUDE_PATH ?>images/bg-form3.jpg');" class="banner-single"></div>
@@ -21,9 +21,8 @@
     <section class="descricao-autor">
         <div class="center">
             <div class="w50 left">
-                <h2>Guilherme C. Grillo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida.</p>
+                <h2><?= $infoSite['nome_autor'] ?></h2>
+                <p><?= $infoSite['descricao'] ?></p>
             </div>
 
             <div class="w50 left">
@@ -39,19 +38,19 @@
         <div class="center">
             <h2 class="title">Especialidades</h2>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-css3-alt"></i></i></h3>
+                <h3><i class="<?= $infoSite['icone1'] ?>"></i></i></h3>
                 <h4>CSS3</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida.</p>
+                <p><?= $infoSite['descricao1'] ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-html5"></i></h3>
+                <h3><i class="<?= $infoSite['icone2'] ?>"></i></h3>
                 <h4>HTML5</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida.</p>
+                <p><?= $infoSite['descricao2'] ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-js-square"></i></i></h3>
+                <h3><i class="<?= $infoSite['icone3'] ?>"></i></i></h3>
                 <h4>JAVASCRIPT</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida.</p>
+                <p><?= $infoSite['descricao3'] ?></p>
             </div>
             <div class="clear"></div>
         </div>
@@ -63,26 +62,33 @@
         <div class="center">
             <div id="depoimentos" class="w50 left depoimentos-container">
                 <h2 class="title">Depoimentos dos nossos clientes</h2>
+                <?php  
+                    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site_depoimentos` ORDER BY order_id ASC LIMIT 3");
+                    $sql->execute();
+                    $depoimentos = $sql->fetchAll();
+                    foreach($depoimentos as $key => $value) {
+                ?>
                 <div class="depoimento-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida."</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
+                    <p class="depoimento-descricao"><?= $value['depoimento'] ?></p>
+                    <p class="nome-autor"><?= $value['nome'] ?> - <?= $value['data'] ?></p>
                 </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida."</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex. Aenean consectetur elit metus, nec consectetur sapien pellentesque in. Donec nec tortor id dolor consectetur pellentesque condimentum eu tellus. Suspendisse in leo vitae purus dapibus congue. Phasellus placerat euismod vehicula. Sed ac cursus neque, et imperdiet augue. Nam lobortis finibus leo eu gravida."</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
+
+                <?php } ?>
             </div>
             <div id="servicos" class="w50 left servicos-container">
                 <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ligula quam, tincidunt sit amet urna non, tempus dapibus ex.</li>
+                        <?php 
+
+                            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site_servicos` ORDER BY order_id ASC LIMIT 3");
+                            $sql->execute();
+                            $servicos = $sql->fetchAll();
+                            foreach($servicos as $key => $value) {
+
+                        ?>
+                            <li><?= $value['servico'] ?></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
