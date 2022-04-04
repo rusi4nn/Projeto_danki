@@ -59,6 +59,11 @@
                 <a <?= selecionadoMenu('adicionar-usuario') ?> <?= verificaPermissaoMenu(2) ?> href="<?= INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuários</a>
                 <h2>Configuração Geral</h2>
                 <a <?= selecionadoMenu('editar-site') ?> href="<?= INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
+                <h2>Gestão de Notícias</h2>
+                <a <?= selecionadoMenu('cadastrar-categorias') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar Categorias</a>
+                <a <?= selecionadoMenu('gerenciar-categorias') ?> href="<?= INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
+                <a <?= selecionadoMenu('cadastrar-noticias') ?> href="<?= INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
+                <a <?= selecionadoMenu('gerenciar-noticias') ?> href="<?= INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
             </div>
         </div>
     </div>
@@ -83,6 +88,15 @@
         ?>
     </div>
 
+    <!-- Tinymce -->
+    <script src="https://cdn.tiny.cloud/1/718aj5ksdt9ey70idjte8basogt1ts0rktuaksug6972sjhv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+      selector: '.tinymce',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+    });
+  </script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/da616c4c66.js" crossorigin="anonymous"></script>
     <!-- jquery -->

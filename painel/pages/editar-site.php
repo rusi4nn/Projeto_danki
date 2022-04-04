@@ -18,7 +18,6 @@
                 Painel::alert('erro','Não foi possível atualizar o site.');
             }
         }
-
     ?>
         <div class="form-group">
             <label for="">Título do site:</label>
