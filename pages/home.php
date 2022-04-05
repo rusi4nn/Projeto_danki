@@ -20,13 +20,9 @@
 
     <section class="descricao-autor">
         <div class="center">
-            <div class="w50 left">
-                <h2><?= $infoSite['nome_autor'] ?></h2>
+            <div class="w100 left">
+                <h2 class="text-center"><img src="<?php INCLUDE_PATH ?>images/foto.jpg"> <?= $infoSite['nome_autor'] ?></h2>
                 <p><?= $infoSite['descricao'] ?></p>
-            </div>
-
-            <div class="w50 left">
-                <img class="right" src="<?= INCLUDE_PATH ?>images/foto.jpg" alt="">
             </div>
             <div class="clear"></div>
         </div>

@@ -62,6 +62,7 @@
                     <li><a href="<?= INCLUDE_PATH ?>home">Home</a></li>
                     <li><a href="<?= INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?= INCLUDE_PATH ?>servicos">Serviços</a></li>
+                    <li><a href="<?= INCLUDE_PATH ?>noticias">Notícias</a></li>
                     <li><a realtime="contato" href="<?= INCLUDE_PATH ?>contato">Contato</a></li>
                 </ul>
             </nav>
@@ -73,6 +74,7 @@
                     <li><a href="<?= INCLUDE_PATH ?>home">Home</a></li>
                     <li><a href="<?= INCLUDE_PATH ?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?= INCLUDE_PATH ?>servicos">Serviços</a></li>
+                    <li><a href="<?= INCLUDE_PATH ?>noticias">Notícias</a></li>
                     <li><a realtime="contato" href="<?= INCLUDE_PATH ?>contato">Contato</a></li>
                 </ul>
             </nav>
@@ -89,8 +91,13 @@
             } else {
                 // Podemos fazer oque quiser pois a página não existe
                 if($url != 'depoimentos' && $url != 'servicos') {
-                    $pagina404 = true;
-                    include_once('pages/404.php');
+                    $urlPar = explode('/',$url)[0];
+                    if($urlPar != 'noticias') {
+                        $pagina404 = true;
+                        include_once('pages/404.php');
+                    } else {
+                        include_once('pages/noticias.php');
+                    }
                 } else {
                     include_once('pages/home.php');
                 }
@@ -115,9 +122,25 @@
     <script src="<?= INCLUDE_PATH ?>js/constants.js"></script>
     <script src="<?= INCLUDE_PATH ?>js/scripts.js"></script>
     <!-- Slider Js -->
-    <?php if ($url == 'home' || $url == '') { ?>
+    <?php if ($url == 'home' || $url == '' || $url == 'servicos' || $url == 'depoimentos') { ?>
         <script src="<?= INCLUDE_PATH ?>js/slider.js"></script>
     <?php } ?>
-    <script src="<?php INCLUDE_PATH ?>js/formularios.js"></script>
+    <?php
+        if(strstr($url, 'noticias') !== false) {
+    ?> 
+
+        <script>
+            $(function(){
+                $('select').change(function() {
+                    location.href=include_path+"noticias/"+$(this).val();
+                })
+            })
+        </script>
+
+    <?php  } ?>
+
+    <?php if($url == 'contato') { ?>
+        <script src="<?php INCLUDE_PATH ?>js/formularios.js"></script>
+    <?php } ?>
 </body>
 </html>

@@ -22,9 +22,9 @@
                     if($verifica->rowCount() == 0) {
                         $imagem = Painel::uploadFile($capa);
                         $slug = Painel::generateSlug($titulo);
-                        $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
+                        $arr = ['categoria_id'=>$categoria_id,'data'=>date('Y-m-d'),'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
                         if(Painel::insert($arr)) {
-                            Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticia?sucesso');
+                            Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticias?sucesso');
                             // Painel::alert('sucesso','A notícia foi cadastrada com sucesso!');
                         } else {
                             Painel::alert('erro','Não foi possível cadastrar a notícia.');
@@ -39,7 +39,7 @@
 
         }
 
-        if(isset($_GET['sucesso'])) {
+        if(isset($_GET['sucesso']) && !isset($_POST['acao'])) {
             Painel::alert('sucesso','A notícia foi cadastrada com sucesso.');
         }
     ?>

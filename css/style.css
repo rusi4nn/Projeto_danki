@@ -12,6 +12,10 @@ img  {
     max-width: 400px;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .center {
     max-width: 1280px;
     padding: 0 2%;
@@ -201,6 +205,14 @@ section.descricao-autor {
 section.descricao-autor h2 {
     font-size: 28px;
     font-weight: 300;
+}
+
+section.descricao-autor img {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
 }
 
 section.descricao-autor p {
@@ -393,7 +405,207 @@ section.erro-404 a {
     background-color: white;
 }
 
-@media screen and (max-width: 700px) {
+/* portal de notícias */
+.header-noticias {
+    width: 100%;
+    background: #333864;
+    padding: 40px 0;
+}
+
+.header-noticias h2:nth-of-type(1) {
+    font-size: 41px;
+    color: white;
+}
+
+.header-noticias h2 > b {
+    color: #F40B5C;
+}
+
+.header-noticias h2 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+section.container-portal {
+    padding: 50px 0;
+}
+
+.sidebar {
+    float: left;
+    width: 30%;
+}
+
+.box-content-sidebar {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: #DDD;
+    padding: 15px;
+    color: #333864;
+}
+
+.box-content-sidebar h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.box-content-sidebar input[type=text], .box-content-sidebar select {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid rgb(220, 220, 220);
+    padding-left: 8px;
+}
+
+.box-content-sidebar select {
+    background: white;
+}
+
+.box-content-sidebar input[type=submit] {
+    border: 0;
+    cursor: pointer;
+    background: #F40B5C;
+    width: 115px;
+    height: 35px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+}
+
+.autor-box-portal {
+    margin-top: 10px;
+}
+
+.box-img-autor {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-image: url('../images/foto.jpg') ;
+    background-position: center;
+    background-size: 100%;
+    margin-bottom: 20px;
+}
+
+.texto-autor-portal h3, .texto-autor-portal p {
+    color: #646464;
+}
+
+.texto-autor-portal p {
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: lighter;
+}
+
+.conteudo-portal {
+    float: left;
+    width: 70%;
+    padding: 0 2%;
+}
+
+.header-conteudo-portal {
+    color: #333864;
+}
+
+.header-conteudo-portal h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.header-conteudo-portal h2 > span {
+    border-bottom: 3px solid #333864;
+}
+
+.box-single-conteudo {
+    margin: 15px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.box-single-conteudo h2 {
+    color: #646464;
+    font-weight: lighter;
+    font-size: 22px;
+}
+
+.box-single-conteudo p {
+    color: #646464;
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.box-single-conteudo a {
+    margin-top: 8px;
+    background: #00B95C;
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 3px;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.paginator {
+    text-align: center;
+}
+
+.paginator a {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 6px 4px;
+    border: 1px solid rgb(220, 220, 220);
+    text-decoration: none;
+    color: #666;
+}
+
+.paginator a.active-page {
+    background: rgb(220, 220, 220);
+}
+
+/* Notícia single */
+
+section.noticia-single {
+    padding: 40px 0;
+    color: #646464;
+}
+
+section.noticia-single header {
+    background-color: transparent;
+}
+
+section.noticia-single h1 {
+    font-size: 26px;
+    border-bottom: 2px solid #646464;
+}
+
+section.noticia-single article {
+    margin-top: 15px;
+}
+
+section.noticia-single h3, section.noticia-single h2, section.noticia-single p {
+    margin: 10px 0;
+}
+
+section.noticia-single ul {
+    margin: 10px 0;
+    list-style-position: inside;
+}
+
+section.noticia-single img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
     nav.desktop {
         display: none;
     }
@@ -430,9 +642,7 @@ section.erro-404 a {
         color: #444;
         text-decoration: none;
     }
-}
 
-@media screen and (max-width: 768px) {
     img {
         float: none;
         display: block;
@@ -451,6 +661,15 @@ section.erro-404 a {
     .box-especialidade {
         padding: 40px 20px;
         margin: 0;
+    }
+
+    .conteudo-portal {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
     }
     
 }

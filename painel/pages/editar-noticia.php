@@ -34,7 +34,7 @@
                         Painel::deleteFile($capa_atual);
                         $capa = Painel::uploadFile($capa);
                         $slug = Painel::generateSlug($titulo);
-                        $arr = ['id'=>$id,'categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$capa,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
+                        $arr = ['id'=>$id,'categoria_id'=>$categoria_id,'data'=>date('Y-m-d'),'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$capa,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
                         Painel::update($arr);
                         $noticia = Painel::select('tb_site_noticias','id=?',array($id));
                         Painel::alert('sucesso','A notícia foi editada com sucesso!');
@@ -44,7 +44,7 @@
                 } else {
                     $capa = $capa_atual;
                     $slug = Painel::generateSlug($titulo);
-                    $arr = ['id'=>$id,'categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$capa,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
+                    $arr = ['id'=>$id,'categoria_id'=>$categoria_id,'data'=>date('Y-m-d'),'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$capa,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_noticias'];
                     Painel::update($arr);
                     $noticia = Painel::select('tb_site_noticias','id=?',array($id));
                     Painel::alert('sucesso','A notícia foi editada com sucesso!');
